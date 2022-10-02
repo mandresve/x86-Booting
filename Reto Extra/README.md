@@ -2,6 +2,7 @@
 
 Este es nuestro intento de acceder al hardware x86 sin interferencia del SO moderno, como en los viejos tiempos :)
 Aquí está el sistema operativo MVOS, especial para esta clase. Podrías hacerlo funcionar en tu sistema? necesitas compilarlo con GCC.
+Wow otra pista de como esta funcionando esto: http://3zanders.co.uk/2017/10/18/writing-a-bootloader3/
 
 ## Lo que funciona
 
