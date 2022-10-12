@@ -17,6 +17,28 @@ boot:
     mov si,saludo 	; apuntar el registro %si a la posición de memoria de la etiqueta saludo
     mov ah,0x0e 	; 0x0e significa 'Escribir caracteres por consola (TTY)'
     
+    ; Emulación de un Diskette (Floppy 3 1/4) sobre el sector de arranque del ISO/USB
+    OEMname:           db    "mkfs.fat"  ; mkfs.fat is what OEMname mkdosfs uses
+    bytesPerSector:    dw    512
+    sectPerCluster:    db    1
+    reservedSectors:   dw    1
+    numFAT:            db    2
+    numRootDirEntries: dw    224
+    numSectors:        dw    2880
+    mediaType:         db    0xf0
+    numFATsectors:     dw    9
+    sectorsPerTrack:   dw    18
+    numHeads:          dw    2
+    numHiddenSectors:  dd    0
+    numSectorsHuge:    dd    0
+    driveNum:          db    0
+    reserved:          db    0
+    signature:         db    0x29
+    volumeID:          dd    0x2d7e5a1a
+    volumeLabel:       db    "NO NAME    "
+    fileSysType:       db    "FAT12   "
+	;resb 0x50
+    
 .loop:
     lodsb
     or al,al		; al == 0 ?
